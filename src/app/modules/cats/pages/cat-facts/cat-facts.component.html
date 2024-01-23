@@ -1,0 +1,15 @@
+<div
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="5"
+  aria-describedby="Cats"
+  (scrolled)="onScroll()"
+>
+  <div class="px-1 py-2" *ngFor="let fact of facts$ | async; let index = index">
+    <p-card header="Fact #{{ index + 1 }} ">
+      <p class="m-0">
+        {{ fact }}
+      </p>
+    </p-card>
+  </div>
+</div>
