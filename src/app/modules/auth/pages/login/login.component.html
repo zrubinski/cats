@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <p-card header="Login" [formGroup]="loginFormGroup" styleClass="login-card">
+          <div class="d-flex flex-column">
+
+            <span *ngIf="error" class="alert alert-danger">{{error}}</span>
+
+            <span class="p-float-label mt-2 mb-5">
+              <input pInputText id="username" formControlName="username" />
+              <label for="username">Username</label>
+            </span>
+
+            <span class="p-float-label mb-5">
+              <p-password formControlName="password" [feedback]="true"></p-password>
+              <label for="password">Password</label>
+            </span>
+
+            <div>
+              <p-button label="Login" [disabled]="!loginFormGroup.valid" (onClick)="onLogin()"></p-button>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>
